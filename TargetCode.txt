@@ -1,0 +1,1838 @@
+#数据段
+.data
+Str0:	.asciiz	"hello world "
+Str1:	.asciiz	"hello world"
+Str2:	.asciiz	"hello world"
+Str3:	.asciiz	"welcome"
+LineBreaks:	.asciiz	"\n" 
+.text
+li	$t0	0
+sw	$t0	0($gp)
+li	$t0	1
+sw	$t0	4($gp)
+li	$t0	-1
+sw	$t0	8($gp)
+li	$t0	30
+sw	$t0	12($gp)
+li	$t0	-30
+sw	$t0	16($gp)
+li	$t0	111
+sw	$t0	20($gp)
+li	$t0	43
+sw	$t0	24($gp)
+li	$t0	51
+sw	$t0	28($gp)
+li	$t0	97
+sw	$t0	32($gp)
+li	$t0	65
+sw	$t0	36($gp)
+li	$t0	95
+sw	$t0	40($gp)
+li	$t0	42
+sw	$t0	44($gp)
+.text
+j main
+add:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+add	$t2	$t0	$t1
+sw	$t2	12($sp)
+#返回语句
+lw	$t0	12($sp)
+addi	$v0	$t0	0
+j	end1518_0
+#结束语句
+end1518_0:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+minus:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+sub	$t2	$t0	$t1
+sw	$t2	12($sp)
+#返回语句
+lw	$t0	12($sp)
+addi	$v0	$t0	0
+j	end1518_1
+#结束语句
+end1518_1:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+multiply:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+mul	$t2	$t0	$t1
+sw	$t2	12($sp)
+#返回语句
+lw	$t0	12($sp)
+addi	$v0	$t0	0
+j	end1518_2
+#结束语句
+end1518_2:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+div:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+div	$t2	$t0	$t1
+sw	$t2	12($sp)
+#返回语句
+lw	$t0	12($sp)
+addi	$v0	$t0	0
+j	end1518_3
+#结束语句
+end1518_3:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+lss:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+slt	$t2	$t0	$t1
+bne	$t2	1	label_0
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_4
+label_0:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_4
+#结束语句
+end1518_4:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+leq:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+sle	$t2	$t0	$t1
+bne	$t2	1	label_1
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_5
+label_1:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_5
+#结束语句
+end1518_5:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+gtr:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+slt	$t2	$t1	$t0
+bne	$t2	1	label_2
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_6
+label_2:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_6
+#结束语句
+end1518_6:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+geq:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+sge	$t2	$t0	$t1
+bne	$t2	1	label_3
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_7
+label_3:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_7
+#结束语句
+end1518_7:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+neq:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+sne	$t2	$t0	$t1
+bne	$t2	1	label_4
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_8
+label_4:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_8
+#结束语句
+end1518_8:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+eql:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+seq	$t2	$t0	$t1
+bne	$t2	1	label_5
+#返回语句
+li	$t0	1
+addi	$v0	$t0	0
+j	end1518_9
+label_5:
+#返回语句
+li	$t0	0
+addi	$v0	$t0	0
+j	end1518_9
+#结束语句
+end1518_9:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+initiallist:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	4($sp)
+label_6:
+#向数组赋值
+la	$t0	56
+lw	$t1	4($sp)
+lw	$t2	4($sp)
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$gp	$gp	$t0
+sw	$t2	0($gp)
+subu	$gp	$gp	$t0
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	8($sp)
+#赋值语句
+lw	$t0	8($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	10
+slt	$t2	$t0	$t1
+beq	$t2	1	label_6
+#结束语句
+end1518_10:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+printlist:
+addu	$sp	$sp	-56
+sw	$ra	56($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	4($sp)
+label_7:
+#从数组取值
+la	$t0	56
+lw	$t1	4($sp)
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$gp	$gp	$t0
+lw	$t2	0($gp)
+subu	$gp	$gp	$t0
+sw	$t2	8($sp)
+#输出标识符
+lw	$t0	8($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	12($sp)
+#赋值语句
+lw	$t0	12($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	10
+slt	$t2	$t0	$t1
+beq	$t2	1	label_7
+#赋值语句
+li	$t0	9
+sw	$t0	4($sp)
+label_8:
+#从数组取值
+la	$t0	56
+lw	$t1	4($sp)
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$gp	$gp	$t0
+lw	$t2	0($gp)
+subu	$gp	$gp	$t0
+sw	$t2	20($sp)
+#输出标识符
+lw	$t0	20($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+sub	$t2	$t0	$t1
+sw	$t2	24($sp)
+#赋值语句
+lw	$t0	24($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	0
+sge	$t2	$t0	$t1
+beq	$t2	1	label_8
+#赋值语句
+li	$t0	0
+sw	$t0	4($sp)
+label_9:
+#从数组取值
+la	$t0	56
+lw	$t1	4($sp)
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$gp	$gp	$t0
+lw	$t2	0($gp)
+subu	$gp	$gp	$t0
+sw	$t2	32($sp)
+#输出标识符
+lw	$t0	32($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	36($sp)
+#赋值语句
+lw	$t0	36($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	3
+sle	$t2	$t0	$t1
+beq	$t2	1	label_9
+#赋值语句
+li	$t0	9
+sw	$t0	4($sp)
+label_10:
+#从数组取值
+la	$t0	56
+lw	$t1	4($sp)
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$gp	$gp	$t0
+lw	$t2	0($gp)
+subu	$gp	$gp	$t0
+sw	$t2	44($sp)
+#输出标识符
+lw	$t0	44($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+sub	$t2	$t0	$t1
+sw	$t2	48($sp)
+#赋值语句
+lw	$t0	48($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	5
+sge	$t2	$t0	$t1
+beq	$t2	1	label_10
+#结束语句
+end1518_11:
+#ra测试
+lw	$ra	56($sp)
+addu	$sp	$sp	56
+jr	$ra
+.text
+j main
+showlist:
+addu	$sp	$sp	-4
+sw	$ra	4($sp)
+jal	initiallist
+jal	printlist
+#结束语句
+end1518_12:
+#ra测试
+lw	$ra	4($sp)
+addu	$sp	$sp	4
+jr	$ra
+.text
+j main
+showworld:
+addu	$sp	$sp	-12
+sw	$ra	12($sp)
+#输出字符串
+li	$v0	4
+la	$a0	Str0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+li	$t0	1
+li	$t1	365
+mul	$t2	$t0	$t1
+sw	$t2	4($sp)
+#输出字符串
+li	$v0	4
+la	$a0	Str1
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	4($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+li	$t0	52
+li	$t1	10
+mul	$t2	$t0	$t1
+sw	$t2	8($sp)
+#输出标识符
+lw	$t0	8($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#结束语句
+end1518_13:
+#ra测试
+lw	$ra	12($sp)
+addu	$sp	$sp	12
+jr	$ra
+.text
+j main
+showif:
+addu	$sp	$sp	-16
+sw	$ra	16($sp)
+#比较
+li	$t0	1
+li	$t1	0
+slt	$t2	$t1	$t0
+bne	$t2	1	label_11
+#输出整数
+li	$t0	1
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_11:
+#比较
+li	$t0	0
+li	$t1	0
+slt	$t2	$t1	$t0
+bne	$t2	1	label_12
+#输出整数
+li	$t0	0
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_12:
+#比较
+li	$t0	1
+li	$t1	0
+slt	$t2	$t1	$t0
+bne	$t2	1	label_13
+#输出字符串
+li	$v0	4
+la	$a0	Str1
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出字符串
+li	$v0	4
+la	$a0	Str3
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_13:
+#结束语句
+end1518_14:
+#ra测试
+lw	$ra	16($sp)
+addu	$sp	$sp	16
+jr	$ra
+.text
+j main
+showmath:
+addu	$sp	$sp	-184
+sw	$ra	184($sp)
+#向数组赋值
+la	$t0	56
+li	$t1	0
+li	$t2	1
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$sp	$sp	$t0
+sw	$t2	0($sp)
+subu	$sp	$sp	$t0
+#赋值语句
+lw	$t0	12($gp)
+sw	$t0	4($sp)
+#输出标识符
+lw	$t0	4($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#从数组取值
+la	$t0	56
+li	$t1	0
+sll	$t1	$t1	2
+add	$t0	$t1	$t0
+addu	$sp	$sp	$t0
+lw	$t2	0($sp)
+subu	$sp	$sp	$t0
+sw	$t2	96($sp)
+#赋值语句
+lw	$t0	96($sp)
+sw	$t0	8($sp)
+#输出标识符
+lw	$t0	8($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#赋值语句
+li	$t0	10
+sw	$t0	12($sp)
+#输出标识符
+lw	$t0	12($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#赋值语句
+li	$t0	97
+sw	$t0	16($sp)
+#输出标识符
+lw	$t0	16($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+li	$t0	1
+li	$t1	3
+add	$t2	$t0	$t1
+sw	$t2	100($sp)
+#加减乘除
+lw	$t0	100($sp)
+li	$t1	6
+add	$t2	$t0	$t1
+sw	$t2	104($sp)
+#赋值语句
+lw	$t0	104($sp)
+sw	$t0	20($sp)
+#输出标识符
+lw	$t0	20($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+li	$t0	3
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	1
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	108($sp)
+#赋值语句
+lw	$t0	108($sp)
+sw	$t0	24($sp)
+#输出标识符
+lw	$t0	24($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	12($sp)
+mul	$t2	$t0	$t1
+sw	$t2	112($sp)
+#赋值语句
+lw	$t0	112($sp)
+sw	$t0	32($sp)
+#输出标识符
+lw	$t0	32($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	20($sp)
+lw	$t1	12($sp)
+div	$t2	$t0	$t1
+sw	$t2	116($sp)
+#赋值语句
+lw	$t0	116($sp)
+sw	$t0	36($sp)
+#输出标识符
+lw	$t0	24($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+neg	$t2	$t0
+sw	$t2	120($sp)
+#赋值语句
+lw	$t0	120($sp)
+sw	$t0	40($sp)
+#输出标识符
+lw	$t0	36($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#赋值语句
+lw	$t0	4($sp)
+sw	$t0	44($sp)
+#输出标识符
+lw	$t0	44($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+add	$t2	$t0	$t1
+sw	$t2	124($sp)
+#赋值语句
+lw	$t0	124($sp)
+sw	$t0	48($sp)
+#输出标识符
+lw	$t0	48($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+neg	$t2	$t0
+sw	$t2	128($sp)
+#加减乘除
+lw	$t0	128($sp)
+lw	$t1	8($sp)
+sub	$t2	$t0	$t1
+sw	$t2	132($sp)
+#赋值语句
+lw	$t0	132($sp)
+sw	$t0	52($sp)
+#输出标识符
+lw	$t0	52($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+li	$t0	1
+li	$t1	5
+mul	$t2	$t0	$t1
+sw	$t2	136($sp)
+#加减乘除
+li	$t0	5
+li	$t1	2
+div	$t2	$t0	$t1
+sw	$t2	140($sp)
+#加减乘除
+lw	$t0	136($sp)
+lw	$t1	140($sp)
+add	$t2	$t0	$t1
+sw	$t2	144($sp)
+#加减乘除
+lw	$t0	144($sp)
+li	$t1	7
+add	$t2	$t0	$t1
+sw	$t2	148($sp)
+#赋值语句
+lw	$t0	148($sp)
+sw	$t0	4($sp)
+#输出标识符
+lw	$t0	4($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+li	$t0	7
+li	$t1	4
+mul	$t2	$t0	$t1
+sw	$t2	152($sp)
+#加减乘除
+lw	$t0	152($sp)
+li	$t1	8
+mul	$t2	$t0	$t1
+sw	$t2	156($sp)
+#加减乘除
+li	$t0	9
+li	$t1	2
+sub	$t2	$t0	$t1
+sw	$t2	160($sp)
+#加减乘除
+lw	$t0	160($sp)
+li	$t1	3
+sub	$t2	$t0	$t1
+sw	$t2	164($sp)
+#加减乘除
+lw	$t0	156($sp)
+lw	$t1	164($sp)
+add	$t2	$t0	$t1
+sw	$t2	168($sp)
+#加减乘除
+lw	$t0	168($sp)
+neg	$t2	$t0
+sw	$t2	172($sp)
+#加减乘除
+li	$t0	5
+li	$t1	8
+mul	$t2	$t0	$t1
+sw	$t2	176($sp)
+#加减乘除
+lw	$t0	172($sp)
+lw	$t1	176($sp)
+add	$t2	$t0	$t1
+sw	$t2	180($sp)
+#赋值语句
+lw	$t0	180($sp)
+sw	$t0	8($sp)
+#输出标识符
+lw	$t0	8($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#结束语句
+end1518_15:
+#ra测试
+lw	$ra	184($sp)
+addu	$sp	$sp	184
+jr	$ra
+.text
+j main
+fibo:
+addu	$sp	$sp	-32
+sw	$ra	32($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	1
+sle	$t2	$t0	$t1
+bne	$t2	1	label_14
+#返回语句
+lw	$t0	4($sp)
+addi	$v0	$t0	0
+j	end1518_16
+label_14:
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+sub	$t2	$t0	$t1
+sw	$t2	12($sp)
+lw	$t0	12($sp)
+addu	$sp	$sp	-32
+sw	$t0	4($sp)
+addu	$sp	$sp	32
+jal	fibo
+#赋返回值语句
+sw	$v0	16($sp)
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	2
+sub	$t2	$t0	$t1
+sw	$t2	20($sp)
+lw	$t0	20($sp)
+addu	$sp	$sp	-32
+sw	$t0	4($sp)
+addu	$sp	$sp	32
+jal	fibo
+#赋返回值语句
+sw	$v0	24($sp)
+#加减乘除
+lw	$t0	16($sp)
+lw	$t1	24($sp)
+add	$t2	$t0	$t1
+sw	$t2	28($sp)
+#返回语句
+lw	$t0	28($sp)
+addi	$v0	$t0	0
+j	end1518_16
+#结束语句
+end1518_16:
+#ra测试
+lw	$ra	32($sp)
+addu	$sp	$sp	32
+jr	$ra
+.text
+j main
+showhotspot:
+addu	$sp	$sp	-60
+sw	$ra	60($sp)
+#加减乘除
+lw	$t0	0($gp)
+lw	$t1	4($gp)
+add	$t2	$t0	$t1
+sw	$t2	4($sp)
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($gp)
+add	$t2	$t0	$t1
+sw	$t2	8($sp)
+#加减乘除
+lw	$t0	8($sp)
+lw	$t1	12($gp)
+add	$t2	$t0	$t1
+sw	$t2	12($sp)
+#加减乘除
+lw	$t0	12($sp)
+lw	$t1	16($gp)
+add	$t2	$t0	$t1
+sw	$t2	16($sp)
+#加减乘除
+lw	$t0	16($sp)
+lw	$t1	20($gp)
+add	$t2	$t0	$t1
+sw	$t2	20($sp)
+#加减乘除
+lw	$t0	20($sp)
+lw	$t1	24($gp)
+add	$t2	$t0	$t1
+sw	$t2	24($sp)
+#加减乘除
+lw	$t0	24($sp)
+lw	$t1	28($gp)
+add	$t2	$t0	$t1
+sw	$t2	28($sp)
+#加减乘除
+lw	$t0	28($sp)
+lw	$t1	32($gp)
+add	$t2	$t0	$t1
+sw	$t2	32($sp)
+#加减乘除
+lw	$t0	32($sp)
+lw	$t1	36($gp)
+add	$t2	$t0	$t1
+sw	$t2	36($sp)
+#加减乘除
+lw	$t0	36($sp)
+lw	$t1	40($gp)
+add	$t2	$t0	$t1
+sw	$t2	40($sp)
+#加减乘除
+lw	$t0	40($sp)
+lw	$t1	44($gp)
+add	$t2	$t0	$t1
+sw	$t2	44($sp)
+#加减乘除
+lw	$t0	44($sp)
+li	$t1	97
+add	$t2	$t0	$t1
+sw	$t2	48($sp)
+#加减乘除
+lw	$t0	48($sp)
+li	$t1	98
+add	$t2	$t0	$t1
+sw	$t2	52($sp)
+#加减乘除
+lw	$t0	52($sp)
+li	$t1	45
+add	$t2	$t0	$t1
+sw	$t2	56($sp)
+#返回语句
+lw	$t0	56($sp)
+addi	$v0	$t0	0
+j	end1518_17
+#结束语句
+end1518_17:
+#ra测试
+lw	$ra	60($sp)
+addu	$sp	$sp	60
+jr	$ra
+.text
+j main
+haha:
+addu	$sp	$sp	-4
+sw	$ra	4($sp)
+#返回语句
+li	$t0	97
+addi	$v0	$t0	0
+j	end1518_18
+#结束语句
+end1518_18:
+#ra测试
+lw	$ra	4($sp)
+addu	$sp	$sp	4
+jr	$ra
+.text
+j main
+allchar:
+addu	$sp	$sp	-40
+sw	$ra	40($sp)
+jal	haha
+#赋返回值语句
+sw	$v0	28($sp)
+#赋值语句
+lw	$t0	28($sp)
+sw	$t0	4($sp)
+#赋值语句
+li	$t0	97
+sw	$t0	8($sp)
+jal	haha
+#赋返回值语句
+sw	$v0	32($sp)
+#赋值语句
+lw	$t0	32($sp)
+sw	$t0	12($sp)
+#赋值语句
+li	$t0	99
+sw	$t0	16($sp)
+#加减乘除
+lw	$t0	16($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	36($sp)
+#赋值语句
+lw	$t0	36($sp)
+sw	$t0	20($sp)
+#赋值语句
+lw	$t0	8($sp)
+sw	$t0	24($sp)
+#输出标识符
+lw	$t0	4($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	8($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	12($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	16($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	20($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#输出标识符
+lw	$t0	24($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#结束语句
+end1518_19:
+#ra测试
+lw	$ra	40($sp)
+addu	$sp	$sp	40
+jr	$ra
+.text
+j main
+dodo:
+addu	$sp	$sp	-56
+sw	$ra	56($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	4($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	8($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	12($sp)
+#赋值语句
+li	$t0	0
+sw	$t0	16($sp)
+label_15:
+label_16:
+label_17:
+#加减乘除
+lw	$t0	16($sp)
+lw	$t1	12($sp)
+add	$t2	$t0	$t1
+sw	$t2	20($sp)
+#赋值语句
+lw	$t0	20($sp)
+sw	$t0	16($sp)
+#加减乘除
+lw	$t0	16($sp)
+lw	$t1	4($sp)
+add	$t2	$t0	$t1
+sw	$t2	24($sp)
+#赋值语句
+lw	$t0	24($sp)
+sw	$t0	16($sp)
+#加减乘除
+lw	$t0	16($sp)
+lw	$t1	8($sp)
+add	$t2	$t0	$t1
+sw	$t2	28($sp)
+#赋值语句
+lw	$t0	28($sp)
+sw	$t0	16($sp)
+#加减乘除
+lw	$t0	12($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	32($sp)
+#赋值语句
+lw	$t0	32($sp)
+sw	$t0	12($sp)
+#比较
+lw	$t0	12($sp)
+li	$t1	100
+sle	$t2	$t0	$t1
+beq	$t2	1	label_17
+#加减乘除
+lw	$t0	8($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	40($sp)
+#赋值语句
+lw	$t0	40($sp)
+sw	$t0	8($sp)
+#比较
+lw	$t0	8($sp)
+li	$t1	100
+sle	$t2	$t0	$t1
+beq	$t2	1	label_16
+#加减乘除
+lw	$t0	4($sp)
+li	$t1	1
+add	$t2	$t0	$t1
+sw	$t2	48($sp)
+#赋值语句
+lw	$t0	48($sp)
+sw	$t0	4($sp)
+#比较
+lw	$t0	4($sp)
+li	$t1	100
+sle	$t2	$t0	$t1
+beq	$t2	1	label_15
+#返回语句
+lw	$t0	16($sp)
+addi	$v0	$t0	0
+j	end1518_20
+#结束语句
+end1518_20:
+#ra测试
+lw	$ra	56($sp)
+addu	$sp	$sp	56
+jr	$ra
+.text
+j main
+nestfunc:
+addu	$sp	$sp	-44
+sw	$ra	44($sp)
+li	$t0	2
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	10
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	div
+#赋返回值语句
+sw	$v0	4($sp)
+lw	$t0	4($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	9
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	multiply
+#赋返回值语句
+sw	$v0	8($sp)
+lw	$t0	8($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	8
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	multiply
+#赋返回值语句
+sw	$v0	12($sp)
+lw	$t0	12($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	7
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	minus
+#赋返回值语句
+sw	$v0	16($sp)
+lw	$t0	16($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	6
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	minus
+#赋返回值语句
+sw	$v0	20($sp)
+lw	$t0	20($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	5
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	minus
+#赋返回值语句
+sw	$v0	24($sp)
+lw	$t0	24($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	4
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	28($sp)
+lw	$t0	28($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	3
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	32($sp)
+lw	$t0	32($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	2
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	36($sp)
+lw	$t0	36($sp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	1
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	40($sp)
+#返回语句
+lw	$t0	40($sp)
+addi	$v0	$t0	0
+j	end1518_21
+#结束语句
+end1518_21:
+#ra测试
+lw	$ra	44($sp)
+addu	$sp	$sp	44
+jr	$ra
+.text
+j main
+allchar2:
+addu	$sp	$sp	-52
+sw	$ra	52($sp)
+#临时常量定义
+li	$t0	97
+sw	$t0	4($sp)
+#临时常量定义
+li	$t0	99
+sw	$t0	8($sp)
+li	$t0	35
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+li	$t0	30
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	20($sp)
+#赋值语句
+lw	$t0	20($sp)
+sw	$t0	12($sp)
+#输出标识符
+lw	$t0	12($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	8($sp)
+add	$t2	$t0	$t1
+sw	$t2	24($sp)
+#输出标识符
+lw	$t0	24($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+#读入字符
+li	$v0	12
+syscall
+sw	$v0	12($sp)
+#读入字符
+li	$v0	12
+syscall
+sw	$v0	16($sp)
+#比较
+lw	$t0	12($sp)
+lw	$t1	16($sp)
+slt	$t2	$t0	$t1
+bne	$t2	1	label_18
+#输出标识符
+lw	$t0	12($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_18:
+#比较
+lw	$t0	12($sp)
+lw	$t1	16($sp)
+sge	$t2	$t0	$t1
+bne	$t2	1	label_19
+#输出标识符
+lw	$t0	16($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_19:
+#比较
+lw	$t0	12($sp)
+li	$t1	0
+slt	$t2	$t1	$t0
+bne	$t2	1	label_20
+#输出标识符
+lw	$t0	12($sp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_20:
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	12($sp)
+add	$t2	$t0	$t1
+sw	$t2	40($sp)
+#比较
+lw	$t0	40($sp)
+li	$t1	0
+slt	$t2	$t1	$t0
+bne	$t2	1	label_21
+#加减乘除
+lw	$t0	4($sp)
+lw	$t1	12($sp)
+add	$t2	$t0	$t1
+sw	$t2	48($sp)
+#输出标识符
+lw	$t0	48($sp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+label_21:
+#结束语句
+end1518_22:
+#ra测试
+lw	$ra	52($sp)
+addu	$sp	$sp	52
+jr	$ra
+.text
+main:
+#读入整数
+li	$v0	5
+syscall
+sw	$v0	248($gp)
+#读入整数
+li	$v0	5
+syscall
+sw	$v0	252($gp)
+#读入整数
+li	$v0	5
+syscall
+sw	$v0	256($gp)
+lw	$t0	248($gp)
+beq	$t0	1	labelcon_0
+beq	$t0	2	labelcon_1
+beq	$t0	3	labelcon_2
+beq	$t0	4	labelcon_3
+beq	$t0	5	labelcon_4
+beq	$t0	6	labelcon_5
+beq	$t0	7	labelcon_6
+beq	$t0	8	labelcon_7
+beq	$t0	9	labelcon_8
+beq	$t0	10	labelcon_9
+beq	$t0	11	labelcon_10
+beq	$t0	12	labelcon_11
+beq	$t0	13	labelcon_12
+beq	$t0	14	labelcon_13
+beq	$t0	15	labelcon_14
+beq	$t0	16	labelcon_15
+beq	$t0	17	labelcon_16
+beq	$t0	18	labelcon_17
+beq	$t0	19	labelcon_18
+beq	$t0	20	labelcon_19
+beq	$t0	21	labelcon_20
+j	label_22
+labelcon_0:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	add
+#赋返回值语句
+sw	$v0	260($gp)
+#输出标识符
+lw	$t0	260($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_1:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	minus
+#赋返回值语句
+sw	$v0	264($gp)
+#输出标识符
+lw	$t0	264($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_2:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	multiply
+#赋返回值语句
+sw	$v0	268($gp)
+#输出标识符
+lw	$t0	268($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_3:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	div
+#赋返回值语句
+sw	$v0	272($gp)
+#输出标识符
+lw	$t0	272($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_4:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	lss
+#赋返回值语句
+sw	$v0	276($gp)
+#输出标识符
+lw	$t0	276($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_5:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	leq
+#赋返回值语句
+sw	$v0	280($gp)
+#输出标识符
+lw	$t0	280($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_6:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	gtr
+#赋返回值语句
+sw	$v0	284($gp)
+#输出标识符
+lw	$t0	284($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_7:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	geq
+#赋返回值语句
+sw	$v0	288($gp)
+#输出标识符
+lw	$t0	288($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_8:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	neq
+#赋返回值语句
+sw	$v0	292($gp)
+#输出标识符
+lw	$t0	292($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_9:
+lw	$t0	256($gp)
+addu	$sp	$sp	-16
+sw	$t0	8($sp)
+addu	$sp	$sp	16
+lw	$t0	252($gp)
+addu	$sp	$sp	-16
+sw	$t0	4($sp)
+addu	$sp	$sp	16
+jal	eql
+#赋返回值语句
+sw	$v0	296($gp)
+#输出标识符
+lw	$t0	296($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_10:
+jal	showlist
+j	label_22
+labelcon_11:
+jal	showworld
+j	label_22
+labelcon_12:
+jal	showif
+j	label_22
+labelcon_13:
+jal	showmath
+j	label_22
+labelcon_14:
+lw	$t0	252($gp)
+addu	$sp	$sp	-32
+sw	$t0	4($sp)
+addu	$sp	$sp	32
+jal	fibo
+#赋返回值语句
+sw	$v0	300($gp)
+#输出标识符
+lw	$t0	300($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_15:
+jal	showhotspot
+#赋返回值语句
+sw	$v0	304($gp)
+#输出标识符
+lw	$t0	304($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_16:
+jal	haha
+#赋返回值语句
+sw	$v0	308($gp)
+#输出标识符
+lw	$t0	308($gp)
+li	$v0	11
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_17:
+jal	allchar
+j	label_22
+labelcon_18:
+jal	dodo
+#赋返回值语句
+sw	$v0	312($gp)
+#输出标识符
+lw	$t0	312($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_19:
+jal	nestfunc
+#赋返回值语句
+sw	$v0	316($gp)
+#输出标识符
+lw	$t0	316($gp)
+li	$v0	1
+move	$a0	$t0
+syscall
+#换行
+li	$v0	4
+la	$a0	LineBreaks
+syscall
+j	label_22
+labelcon_20:
+jal	allchar2
+j	label_22
+label_22:
+#main结束语句
+end1518_23:
+li	$v0	10
+syscall
