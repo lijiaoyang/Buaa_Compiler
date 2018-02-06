@@ -1,0 +1,22 @@
+const int mm=-2; 
+const int nn = -9,k=-8; 
+void main() 
+{ 
+int e,key; 
+scanf(e); 
+switch(e) 
+{ 
+case -4:
+{
+ scanf(key);
+ switch(key*1)
+{
+ case 0:printf("key is 0");
+ case 2:printf("key is 2");
+}
+}
+case 5:printf("this is 1");
+case 6:printf(e);
+case -8:printf(nn); 
+} 
+}

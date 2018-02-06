@@ -1,0 +1,115 @@
+Const char ch1='e', ch2='n', ch3='d'; 
+const int num1 = 1,num2 = 2,_num = 10,negnum=-1024; 
+int fbnum,fbResult; 
+char m [5]; 
+voId nullfunc() 
+{ } 
+void count() 
+{
+ char c;
+ char name;
+ int letters,star;
+ int digits;
+ int others;
+ letters=0;
+ star=0;
+ digits=0;
+ others=0;
+ priNtf("scanf some words:(end is /)");
+ do
+{
+ scanf(C);
+ if(c>='a')
+{
+ if(c<='z')
+ letters=letters+1;
+}
+ if(c>='A')
+{
+ if(c<='Z')
+ letters=letters+1;
+}
+ if(c>='0')
+{
+ if(c<='9')
+ digits=digits+1;
+}
+ if(c=='*')
+ star=star+1;
+}while(c!='/') 
+printf("the num of letters is",letters); 
+printf("the num of digits is",digits); 
+printf("the num of star is",star); 
+}
+ int age(int n)
+{
+ const int ten = 10;
+ int c;
+ if(n)
+{
+ if(n==1)
+ c=(ten);
+ if(n!=1)
+ c=age(n-1)+2;
+}
+ return (c);
+} 
+int fact(int j)
+{
+ int sum;
+ if (j == 0)
+ sum = 1;
+ if (j!=0)
+ sum = j*fact(j - 1);
+ return (sum);
+}
+ void fact5() 
+{
+ const int worong = -2;
+ int i;
+ i = 0;
+ do 
+{
+ printf("answers are: ",i);
+ printf(fact(i));
+ i = i + 1;
+} while (i<6)
+}
+int fibonaci(int i)
+{
+ if(i == 0)
+ {
+ return (0);
+ }
+ if(i == 1)
+{
+ return (1);
+}
+ return (fibonaci(i-1) + fibonaci(i-2));
+}
+void main()
+{
+ const int worong = -2,arr=8;
+ char a[10],_[9];
+ int i,m;
+ sCanf(i);
+ switch(i)
+{
+ case -1:
+{
+ m=age(-3+8);
+ printf(m);
+}
+ case 3:fact5();
+ case 4:
+{
+ printf("scanf fbnum!");
+ scanf(fbnum);
+ fbResult = fibonaci(fbnum);
+ printf(fbResult);
+}
+ case 5:count();
+}
+ printf("---The End---");
+ return;
+} 
