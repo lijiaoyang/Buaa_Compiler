@@ -1,0 +1,599 @@
+Gcon Int a1 0
+Gcon Int a2 1
+Neg 1 tmp0
+Gcon Int a3 -1
+Gcon Int a4 30
+Neg 30 tmp1
+Gcon Int a5 -30
+Gcon Int a6 111
+Gcon Char c1 '+'
+Gcon Char c2 '3'
+Gcon Char c3 'a'
+Gcon Char c4 'A'
+Gcon Char c5 '_'
+Gcon Char c6 '*'
+Gvar Int b1
+Gvar Int b2
+Garr Int b3 10
+Gvar Int bb
+Gvar Int b5b
+Gvar Int bb6
+Garr Char d1 10
+Gvar Char d22
+Func Int add
+Para Int a
+Para Int b
+Add a b tmp2
+Ret tmp2
+End end1518_0 add
+Func Int minus
+Para Int a
+Para Int b
+Min a b tmp3
+Ret tmp3
+End end1518_1 minus
+Func Int multiply
+Para Int a
+Para Int b
+Mul a b tmp4
+Ret tmp4
+End end1518_2 multiply
+Func Int div
+Para Int a
+Para Int b
+Div a b tmp5
+Ret tmp5
+End end1518_3 div
+Func Int lss
+Para Int a
+Para Int b
+Less a b tmp6
+FGoto tmp6 label_0
+Ret 1
+label_0
+Ret 0
+End end1518_4 lss
+Func Int leq
+Para Int a
+Para Int b
+LaE a b tmp7
+FGoto tmp7 label_1
+Ret 1
+label_1
+Ret 0
+End end1518_5 leq
+Func Int gtr
+Para Int a
+Para Int b
+Grea a b tmp8
+FGoto tmp8 label_2
+Ret 1
+label_2
+Ret 0
+End end1518_6 gtr
+Func Int geq
+Para Int a
+Para Int b
+GaE a b tmp9
+FGoto tmp9 label_3
+Ret 1
+label_3
+Ret 0
+End end1518_7 geq
+Func Int neq
+Para Int a
+Para Int b
+NaE a b tmp10
+FGoto tmp10 label_4
+Ret 1
+label_4
+Ret 0
+End end1518_8 neq
+Func Int eql
+Para Int a
+Para Int b
+Equ a b tmp11
+FGoto tmp11 label_5
+Ret 1
+label_5
+Ret 0
+End end1518_9 eql
+Func Void initiallist
+Tvar Int i
+Ass i 0
+label_6
+ArrA b3 i i
+Add i 1 tmp12
+Ass i tmp12
+Less i 10 tmp13
+TGoto tmp13 label_6
+End end1518_10 initiallist
+Func Void printlist
+Tvar Int i
+Ass i 0
+label_7
+ArrG b3 i tmp14
+Prin tmp14
+Add i 1 tmp15
+Ass i tmp15
+Less i 10 tmp16
+TGoto tmp16 label_7
+Ass i 9
+label_8
+ArrG b3 i tmp17
+Prin tmp17
+Min i 1 tmp18
+Ass i tmp18
+GaE i 0 tmp19
+TGoto tmp19 label_8
+Ass i 0
+label_9
+ArrG b3 i tmp20
+Prin tmp20
+Add i 1 tmp21
+Ass i tmp21
+LaE i 3 tmp22
+TGoto tmp22 label_9
+Ass i 9
+label_10
+ArrG b3 i tmp23
+Prin tmp23
+Min i 1 tmp24
+Ass i tmp24
+GaE i 5 tmp25
+TGoto tmp25 label_10
+End end1518_11 printlist
+Func Void showlist
+CallBegin initiallist
+CallEnd initiallist
+CallBegin printlist
+CallEnd printlist
+End end1518_12 showlist
+Func Void showworld
+Prin "hello world "
+Mul 1 365 tmp26
+Prin "hello world"
+Prin tmp26
+Mul 52 10 tmp27
+Prin tmp27
+End end1518_13 showworld
+Func Void showif
+Grea 1 0 tmp28
+FGoto tmp28 label_11
+Prin 1
+label_11
+Grea 0 0 tmp29
+FGoto tmp29 label_12
+Prin 0
+label_12
+Grea 1 0 tmp30
+FGoto tmp30 label_13
+Prin "hello world"
+Prin "welcome"
+label_13
+End end1518_14 showif
+Func Void showmath
+Tvar Int a
+Tvar Int b
+Tvar Int c
+Tvar Int d
+Tvar Int e
+Tvar Int f
+Tvar Int g
+Tvar Int h
+Tvar Int i
+Tvar Int j
+Tvar Int k
+Tvar Int l
+Tvar Int m
+Tarr Int n 10
+ArrA n 0 1
+Ass a a4
+Prin a
+ArrG n 0 tmp31
+Ass b tmp31
+Prin b
+Ass c 10
+Prin c
+Ass d 'a'
+Prin d
+Add 1 3 tmp32
+Add tmp32 6 tmp33
+Ass e tmp33
+Prin e
+CallBegin add
+Push 1 PARA1 add
+Push 3 PARA2 add
+CallEnd add
+RetS Int tmp34
+Ass f tmp34
+Prin f
+Mul a c tmp35
+Ass h tmp35
+Prin h
+Div e c tmp36
+Ass i tmp36
+Prin f
+Neg a tmp37
+Ass j tmp37
+Prin i
+Ass k a
+Prin k
+Add a b tmp38
+Ass l tmp38
+Prin l
+Neg a tmp39
+Min tmp39 b tmp40
+Ass m tmp40
+Prin m
+Mul 1 5 tmp41
+Div 5 2 tmp42
+Add tmp41 tmp42 tmp43
+Add tmp43 7 tmp44
+Ass a tmp44
+Prin a
+Mul 7 4 tmp45
+Mul tmp45 8 tmp46
+Min 9 2 tmp47
+Min tmp47 3 tmp48
+Add tmp46 tmp48 tmp49
+Neg tmp49 tmp50
+Mul 5 8 tmp51
+Add tmp50 tmp51 tmp52
+Ass b tmp52
+Prin b
+End end1518_15 showmath
+Func Int fibo
+Para Int n
+LaE n 1 tmp53
+FGoto tmp53 label_14
+Ret n
+label_14
+CallBegin fibo
+Min n 1 tmp54
+Push tmp54 PARA1 fibo
+CallEnd fibo
+RetS Int tmp55
+CallBegin fibo
+Min n 2 tmp56
+Push tmp56 PARA1 fibo
+CallEnd fibo
+RetS Int tmp57
+Add tmp55 tmp57 tmp58
+Ret tmp58
+End end1518_16 fibo
+Func Int showhotspot
+Add a1 a2 tmp59
+Add tmp59 a3 tmp60
+Add tmp60 a4 tmp61
+Add tmp61 a5 tmp62
+Add tmp62 a6 tmp63
+Add tmp63 c1 tmp64
+Add tmp64 c2 tmp65
+Add tmp65 c3 tmp66
+Add tmp66 c4 tmp67
+Add tmp67 c5 tmp68
+Add tmp68 c6 tmp69
+Add tmp69 'a' tmp70
+Add tmp70 'b' tmp71
+Add tmp71 '-' tmp72
+Ret tmp72
+End end1518_17 showhotspot
+Func Char haha
+Ret 'a'
+End end1518_18 haha
+Func Void allchar
+Tvar Int a
+Tvar Char b
+Tvar Char c
+Tvar Char d
+Tvar Char e
+Tvar Char f
+CallBegin haha
+CallEnd haha
+RetS Char tmp73
+Ass a tmp73
+Ass b 'a'
+CallBegin haha
+CallEnd haha
+RetS Char tmp74
+Ass c tmp74
+Ass d 'c'
+Add d 1 tmp75
+Ass e tmp75
+Ass f b
+Prin a
+Prin b
+Prin c
+Prin d
+Prin e
+Prin f
+End end1518_19 allchar
+Func Int dodo
+Tvar Int i
+Tvar Int j
+Tvar Int k
+Tvar Int sum
+Ass i 0
+Ass j 0
+Ass k 0
+Ass sum 0
+label_15
+label_16
+label_17
+Add sum k tmp76
+Ass sum tmp76
+Add sum i tmp77
+Ass sum tmp77
+Add sum j tmp78
+Ass sum tmp78
+Add k 1 tmp79
+Ass k tmp79
+LaE k 100 tmp80
+TGoto tmp80 label_17
+Add j 1 tmp81
+Ass j tmp81
+LaE j 100 tmp82
+TGoto tmp82 label_16
+Add i 1 tmp83
+Ass i tmp83
+LaE i 100 tmp84
+TGoto tmp84 label_15
+Ret sum
+End end1518_20 dodo
+Func Int nestfunc
+CallBegin add
+Push 1 PARA1 add
+CallBegin add
+Push 2 PARA1 add
+CallBegin add
+Push 3 PARA1 add
+CallBegin add
+Push 4 PARA1 add
+CallBegin minus
+Push 5 PARA1 minus
+CallBegin minus
+Push 6 PARA1 minus
+CallBegin minus
+Push 7 PARA1 minus
+CallBegin multiply
+Push 8 PARA1 multiply
+CallBegin multiply
+Push 9 PARA1 multiply
+CallBegin div
+Push 10 PARA1 div
+Push 2 PARA2 div
+CallEnd div
+RetS Int tmp85
+Push tmp85 PARA2 multiply
+CallEnd multiply
+RetS Int tmp86
+Push tmp86 PARA2 multiply
+CallEnd multiply
+RetS Int tmp87
+Push tmp87 PARA2 minus
+CallEnd minus
+RetS Int tmp88
+Push tmp88 PARA2 minus
+CallEnd minus
+RetS Int tmp89
+Push tmp89 PARA2 minus
+CallEnd minus
+RetS Int tmp90
+Push tmp90 PARA2 add
+CallEnd add
+RetS Int tmp91
+Push tmp91 PARA2 add
+CallEnd add
+RetS Int tmp92
+Push tmp92 PARA2 add
+CallEnd add
+RetS Int tmp93
+Push tmp93 PARA2 add
+CallEnd add
+RetS Int tmp94
+Ret tmp94
+End end1518_21 nestfunc
+Func Void allchar2
+Tcon Char a 'a'
+Tcon Char b 'c'
+Tvar Char c
+Tvar Char d
+CallBegin add
+Push 30 PARA1 add
+Push 35 PARA2 add
+CallEnd add
+RetS Int tmp95
+Ass c tmp95
+Prin c
+Add a b tmp96
+Prin tmp96
+Scan c
+Scan d
+Less c d tmp97
+FGoto tmp97 label_18
+Prin c
+label_18
+GaE c d tmp98
+FGoto tmp98 label_19
+Prin d
+label_19
+Grea c 0 tmp99
+FGoto tmp99 label_20
+Prin c
+label_20
+Add a c tmp100
+Grea tmp100 0 tmp101
+FGoto tmp101 label_21
+Add a c tmp102
+Prin tmp102
+label_21
+End end1518_22 allchar2
+Func Void main
+Tvar Int a
+Tvar Int b
+Tvar Int c
+Scan a
+Scan b
+Scan c
+Swit a switend_0
+labelcon_0
+ThisLabel Label labelcon_0 1
+CallBegin add
+Push b PARA1 add
+Push c PARA2 add
+CallEnd add
+RetS Int tmp103
+Prin tmp103
+Goto label_22
+labelcon_1
+ThisLabel Label labelcon_1 2
+CallBegin minus
+Push b PARA1 minus
+Push c PARA2 minus
+CallEnd minus
+RetS Int tmp104
+Prin tmp104
+Goto label_22
+labelcon_2
+ThisLabel Label labelcon_2 3
+CallBegin multiply
+Push b PARA1 multiply
+Push c PARA2 multiply
+CallEnd multiply
+RetS Int tmp105
+Prin tmp105
+Goto label_22
+labelcon_3
+ThisLabel Label labelcon_3 4
+CallBegin div
+Push b PARA1 div
+Push c PARA2 div
+CallEnd div
+RetS Int tmp106
+Prin tmp106
+Goto label_22
+labelcon_4
+ThisLabel Label labelcon_4 5
+CallBegin lss
+Push b PARA1 lss
+Push c PARA2 lss
+CallEnd lss
+RetS Int tmp107
+Prin tmp107
+Goto label_22
+labelcon_5
+ThisLabel Label labelcon_5 6
+CallBegin leq
+Push b PARA1 leq
+Push c PARA2 leq
+CallEnd leq
+RetS Int tmp108
+Prin tmp108
+Goto label_22
+labelcon_6
+ThisLabel Label labelcon_6 7
+CallBegin gtr
+Push b PARA1 gtr
+Push c PARA2 gtr
+CallEnd gtr
+RetS Int tmp109
+Prin tmp109
+Goto label_22
+labelcon_7
+ThisLabel Label labelcon_7 8
+CallBegin geq
+Push b PARA1 geq
+Push c PARA2 geq
+CallEnd geq
+RetS Int tmp110
+Prin tmp110
+Goto label_22
+labelcon_8
+ThisLabel Label labelcon_8 9
+CallBegin neq
+Push b PARA1 neq
+Push c PARA2 neq
+CallEnd neq
+RetS Int tmp111
+Prin tmp111
+Goto label_22
+labelcon_9
+ThisLabel Label labelcon_9 10
+CallBegin eql
+Push b PARA1 eql
+Push c PARA2 eql
+CallEnd eql
+RetS Int tmp112
+Prin tmp112
+Goto label_22
+labelcon_10
+ThisLabel Label labelcon_10 11
+CallBegin showlist
+CallEnd showlist
+Goto label_22
+labelcon_11
+ThisLabel Label labelcon_11 12
+CallBegin showworld
+CallEnd showworld
+Goto label_22
+labelcon_12
+ThisLabel Label labelcon_12 13
+CallBegin showif
+CallEnd showif
+Goto label_22
+labelcon_13
+ThisLabel Label labelcon_13 14
+CallBegin showmath
+CallEnd showmath
+Goto label_22
+labelcon_14
+ThisLabel Label labelcon_14 15
+CallBegin fibo
+Push b PARA1 fibo
+CallEnd fibo
+RetS Int tmp113
+Prin tmp113
+Goto label_22
+labelcon_15
+ThisLabel Label labelcon_15 16
+CallBegin showhotspot
+CallEnd showhotspot
+RetS Int tmp114
+Prin tmp114
+Goto label_22
+labelcon_16
+ThisLabel Label labelcon_16 17
+CallBegin haha
+CallEnd haha
+RetS Char tmp115
+Prin tmp115
+Goto label_22
+labelcon_17
+ThisLabel Label labelcon_17 18
+CallBegin allchar
+CallEnd allchar
+Goto label_22
+labelcon_18
+ThisLabel Label labelcon_18 19
+CallBegin dodo
+CallEnd dodo
+RetS Int tmp116
+Prin tmp116
+Goto label_22
+labelcon_19
+ThisLabel Label labelcon_19 20
+CallBegin nestfunc
+CallEnd nestfunc
+RetS Int tmp117
+Prin tmp117
+Goto label_22
+labelcon_20
+ThisLabel Label labelcon_20 21
+CallBegin allchar2
+CallEnd allchar2
+Goto label_22
+SwitEnd TheEndOfSwitch
+label_22
+ThisLabel Label label_22 switend_0
+End end1518_23
