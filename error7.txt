@@ -1,0 +1,20 @@
+const int a=3; 
+char arr; 
+int sz[180]; 
+void test() 
+{
+ int arr[100];
+ int sz;
+ int a[10];
+ a[11]=9;
+ a[10]=8;
+ a[100-98]=2;
+}
+void main() 
+{
+ int w;
+ funa();
+ w = funb();
+ w = arr[2];
+ w = sz;
+}

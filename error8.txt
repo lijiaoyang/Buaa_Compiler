@@ -1,0 +1,13 @@
+const h='a'; 
+int m,n 
+int fun() 
+{
+ int a;
+ a = 1;
+ a=a+5;
+ return (c);
+} 
+VOID main() 
+{
+ fun();
+}
