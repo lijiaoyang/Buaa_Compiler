@@ -1,0 +1,20 @@
+int fun() 
+{
+ char a;
+ a = 3; 
+} 
+void fun2() 
+{
+ char b;
+ int c;
+ b = 'b';
+ return (b); 
+} 
+void main() 
+{
+ int d,e;
+ d = fun();
+ e = fun2();
+ printf(d);
+ printf(e); 
+}

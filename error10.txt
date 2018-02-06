@@ -1,0 +1,16 @@
+int m; 
+char fun() 
+{
+ return('a'); 
+} 
+void main() 
+{
+ char arr[20];
+ char n;
+ n = 'w'+'a';
+ arr[3]='q';
+ arr[4]=arr[3]+1;
+ arr[4]='a'+'*';
+ m = arr[3];
+ m = fun(); 
+}

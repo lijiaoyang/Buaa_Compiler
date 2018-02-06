@@ -1,0 +1,18 @@
+const int a=1; 
+const int a=2,a=5; 
+const char a = 'a'; 
+int a; 
+char a; 
+void fun() 
+{
+ int a;
+ char a,fun; 
+} 
+void main() 
+{
+ const char fun = '6';
+ const int a = 7;
+ int a,b;
+ char a;
+ char b; 
+}
